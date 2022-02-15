@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.AutonCommand;
 import frc.robot.commands.IntakeIn;
-import frc.robot.commands.ShootCommand;
+import frc.robot.commands.Shoot;
 import frc.robot.commands.IntakeOut;
 import frc.robot.commands.conveyorIn;
 import frc.robot.subsystems.Intake;
@@ -43,7 +43,7 @@ public class RobotContainer {
 
     IntakeUpButton.whileHeld(new IntakeIn(s_intake));
     IntakeDownButton.whileHeld(new IntakeOut(s_intake));
-    ShootButton.whileHeld(new ShootCommand(s_shooter));
+    ShootButton.whileHeld(new Shoot(s_shooter));
     Conveyor.whileHeld(new conveyorIn(v_conveyor));
 
   }
