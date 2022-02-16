@@ -38,7 +38,7 @@ public class RobotContainer {
 
     JoystickButton IntakeUpButton = new JoystickButton(c_joystick, 3);
     JoystickButton IntakeDownButton = new JoystickButton(c_joystick, 4);
-    JoystickButton ShootButton = new JoystickButton(c_joystick,6);
+    JoystickButton ShootButton = new JoystickButton(c_joystick,7);
     JoystickButton Conveyor = new JoystickButton(c_joystick, 1);
 
     IntakeUpButton.whileHeld(new IntakeIn(s_intake));

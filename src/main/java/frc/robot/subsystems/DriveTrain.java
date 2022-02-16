@@ -6,24 +6,24 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
 
 
 public class DriveTrain extends SubsystemBase {
 
   
-  private final WPI_VictorSPX m_leftMotor_front;
-  private final WPI_VictorSPX m_rightMotor_front;
-  private final WPI_VictorSPX m_leftMotor_back;
-  private final WPI_VictorSPX m_rightMotor_back;
+  private final Victor m_leftMotor_front;
+  private final Victor m_rightMotor_front;
+  private final Victor m_leftMotor_back;
+  private final Victor m_rightMotor_back;
   private final MecanumDrive mecDrive;
 
   public DriveTrain(){
 
-  m_leftMotor_front = new WPI_VictorSPX(4);
-  m_rightMotor_front = new WPI_VictorSPX(2);
-  m_leftMotor_back = new WPI_VictorSPX(3);
-  m_rightMotor_back = new WPI_VictorSPX(1);
+  m_leftMotor_front = new Victor(4);
+  m_rightMotor_front = new Victor(2);
+  m_leftMotor_back = new Victor(3);
+  m_rightMotor_back = new Victor(1);
 
   mecDrive = new MecanumDrive(m_leftMotor_front, m_rightMotor_front, m_leftMotor_back, m_rightMotor_back);
 

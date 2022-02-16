@@ -4,16 +4,16 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import edu.wpi.first.wpilibj.motorcontrol.Victor;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Conveyor extends SubsystemBase {
   
-  private WPI_VictorSPX v_conveyor;
+  private Victor v_conveyor;
 
   public Conveyor() {
-    v_conveyor = new WPI_VictorSPX(6);
+    v_conveyor = new Victor(6);
   }
 
   @Override

@@ -6,15 +6,16 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import edu.wpi.first.wpilibj.motorcontrol.Talon;
+//import edu.wpi.first.wpilibj.motorcontrol.Talon;
 
 public class Shooter extends SubsystemBase {
 
-  private final WPI_TalonFX m_shooter;
+  private final Talon m_shooter;
 
   public Shooter() {
 
-    m_shooter = new WPI_TalonFX(1);
+    m_shooter = new Talon(4);
   }
 
 
