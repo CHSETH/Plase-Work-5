@@ -9,18 +9,16 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Shooter extends SubsystemBase {
 
- //private final Talon m_shooter;
 
   public Shooter() {
-    //Assigning the CanID 7 to the motorcontroller
-    //m_shooter = new Talon(7);
+
   }
 
 
   
   public void shoot(){
     //sets the shooter to full throttle
-    SubsystemConstants.m_shooter.set(-1.0);
+    SubsystemConstants.m_shooter.set(1.0);
 
   }
 
