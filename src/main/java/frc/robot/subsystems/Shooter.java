@@ -4,31 +4,29 @@
 
 package frc.robot.subsystems;
 
+import frc.robot.Constants.SubsystemConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
-//import edu.wpi.first.wpilibj.motorcontrol.Talon;
 
 public class Shooter extends SubsystemBase {
 
-  private final Talon m_shooter;
+ //private final Talon m_shooter;
 
   public Shooter() {
-
-    m_shooter = new Talon(4);
+    //Assigning the CanID 7 to the motorcontroller
+    //m_shooter = new Talon(7);
   }
 
 
   
   public void shoot(){
-
-    m_shooter.set(-1.0);
+    //sets the shooter to full throttle
+    SubsystemConstants.m_shooter.set(-1.0);
 
   }
 
   public void stop(){
-
-    m_shooter.set(0.0);
+    //sets the shooter to rest
+    SubsystemConstants.m_shooter.set(0.0);
 
   }
 
@@ -41,7 +39,7 @@ public class Shooter extends SubsystemBase {
 
 public void m_shooter(){
 
-  m_shooter.set(-0.5);
+  SubsystemConstants.m_shooter.set(-0.5);
 
 }
 }

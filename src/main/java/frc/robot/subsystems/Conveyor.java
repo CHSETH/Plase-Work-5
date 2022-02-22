@@ -4,16 +4,16 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
-
+import frc.robot.Constants.SubsystemConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Conveyor extends SubsystemBase {
   
-  private Victor v_conveyor;
+  //private Victor v_conveyor;
 
   public Conveyor() {
-    v_conveyor = new Victor(6);
+    //Assigning the CanID 6 to the motorcontroller
+    //v_conveyor = new Victor(6);
   }
 
   @Override
@@ -22,20 +22,21 @@ public class Conveyor extends SubsystemBase {
   }
 
   public void lift(){
-    v_conveyor.set(0.50);
+    //runs the conveyor at half throttle
+    SubsystemConstants.v_conveyor.set(0.50);
 
   }
 
   public void lower(){
-
-    v_conveyor.set(-0.50);
+    //runs the conveyor at half throttle in reverse
+    SubsystemConstants.v_conveyor.set(-0.50);
 
   }
 
 
   public void stop(){
-
-    v_conveyor.set(0.0);
+    //sets the conveyor to rest
+    SubsystemConstants.v_conveyor.set(0.0);
 
   }
   

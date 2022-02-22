@@ -1,13 +1,14 @@
 package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import frc.robot.Constants.SubsystemConstants;
 
 public class Intake extends SubsystemBase {
 
-  private Victor s_intake;
+  //private Victor s_intake;
 
   public Intake() {
-    s_intake = new Victor(5);
+    //Assigning the CanID 5 to the motorcontroller
+    //s_intake = new Victor(5);
   }
 
   @Override
@@ -16,20 +17,21 @@ public class Intake extends SubsystemBase {
   }
 
   public void lift(){
-    s_intake.set(0.50);
+    //sets the intake to run at half throttle
+    SubsystemConstants.s_intake.set(0.50);
 
   }
 
   public void lower(){
-
-    s_intake.set(-0.50);
+    //sets the intake to ran at half throttle in reverse
+    SubsystemConstants.s_intake.set(-0.50);
 
   }
 
 
   public void stop(){
 
-    s_intake.set(0.0);
+    SubsystemConstants.s_intake.set(0.0);
 
   }
 
