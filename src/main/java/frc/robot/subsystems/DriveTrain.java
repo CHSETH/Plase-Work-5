@@ -22,7 +22,7 @@ public class DriveTrain extends SubsystemBase {
   public DriveTrain(){
 
   //Assiging the motors to CanId's 1,2,3,and 4 respectively
-  m_leftMotor_front = new Victor(4);
+  m_leftMotor_front = new Victor(8);
   m_rightMotor_front = new Victor(2);
   m_leftMotor_back = new Victor(3);
   m_rightMotor_back = new Victor(1);

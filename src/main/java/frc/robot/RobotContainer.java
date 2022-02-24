@@ -4,6 +4,8 @@ import edu.wpi.first.wpilibj2.command.Command;
 //import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.GenericHID;
+
 import frc.robot.commands.DriveCommand;
 import frc.robot.commands.AutonCommand;
 import frc.robot.commands.ConveyorIn;
@@ -15,18 +17,19 @@ import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Conveyor;
 
-
 public class RobotContainer {
 
   //The Subsystems
-  private final DriveTrain s_drivetrain = new DriveTrain();
-  private final Intake s_intake = new Intake();
-  private final Shooter s_shooter = new Shooter();
-  private final Conveyor v_conveyor = new Conveyor();
+  public final DriveTrain s_drivetrain = new DriveTrain();
+  public final Intake s_intake = new Intake();
+  public final Shooter s_shooter = new Shooter();
+  public final Conveyor v_conveyor = new Conveyor();
   //The Joystick
-  private final Joystick c_joystick = new Joystick(0);
+  public final Joystick c_joystick = new Joystick(0);
+  public final GenericHID gamepad = new GenericHID(0);
 
   public RobotContainer() {
+
     configureButtonBindings();
 
     //The DriveTrain
@@ -52,6 +55,7 @@ public class RobotContainer {
     /*You can use either the above method or the below method to declare and assign button
     values to commands*/
 
+    //new JoystickButton(gamepad, 1).whileHeld(new Shoot(s_shooter));
     //run the shooter while button 7 is held on the joystick
     new JoystickButton(c_joystick, 7).whileHeld(new Shoot(s_shooter));
     //run the intake while button 3 is held on the joystick

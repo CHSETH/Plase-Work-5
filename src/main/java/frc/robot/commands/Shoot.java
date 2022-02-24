@@ -9,7 +9,7 @@ import frc.robot.subsystems.Shooter;
 
 public class Shoot extends CommandBase {
 
-  private final Shooter s_shooter;
+  final Shooter s_shooter;
 
   public Shoot(Shooter sh) {
 
@@ -20,7 +20,7 @@ public class Shoot extends CommandBase {
 
   @Override
   public void initialize() {
-
+    System.out.println("Shoot1");
     s_shooter.shoot();
 
   }
@@ -35,14 +35,14 @@ public class Shoot extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-
+    System.out.println("Shoot2");
     s_shooter.stop();
 
   }
 
   @Override
   public boolean isFinished() {
-
+    System.out.println("Shoot3");
     return false;
   }
 }

@@ -6,6 +6,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.motorcontrol.Talon;
 import edu.wpi.first.wpilibj.motorcontrol.Victor;
+//import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -20,6 +21,7 @@ public final class Constants {
     public static final class SubsystemConstants {
         public static final Victor v_conveyor = new Victor(6);
         public static final Victor s_intake = new Victor(5);
-        public static final Talon m_shooter = new Talon(7);
+       // public static final Talon m_shooter = new Talon(7);
+        public static final Talon m_shooter = new Talon(9);
     }
 }
