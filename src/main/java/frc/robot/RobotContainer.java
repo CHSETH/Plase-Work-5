@@ -11,6 +11,7 @@ import frc.robot.commands.AutonCommand;
 import frc.robot.commands.ConveyorIn;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.Shoot;
+import frc.robot.commands.StopShoot;
 import frc.robot.commands.IntakeOut;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.DriveTrain;
@@ -55,9 +56,10 @@ public class RobotContainer {
     /*You can use either the above method or the below method to declare and assign button
     values to commands*/
 
-    //new JoystickButton(gamepad, 1).whileHeld(new Shoot(s_shooter));
-    //run the shooter while button 7 is held on the joystick
-    new JoystickButton(c_joystick, 7).whileHeld(new Shoot(s_shooter));
+    //sets the shooter to rest when button 8 is pressed on the joystick
+    new JoystickButton(c_joystick, 8).whenPressed(new StopShoot(s_shooter));
+    //run the shooter when button 7 is pressed on the joystick
+    new JoystickButton(c_joystick, 7).whenPressed(new Shoot(s_shooter));
     //run the intake while button 3 is held on the joystick
     new JoystickButton(c_joystick, 3).whileHeld(new IntakeIn(s_intake));
     //reverse the intake while button 4 is held on the joystick

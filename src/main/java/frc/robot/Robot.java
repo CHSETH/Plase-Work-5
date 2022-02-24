@@ -83,8 +83,8 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    System.out.println(SubsystemConstants.m_shooter.get());
-    SubsystemConstants.m_shooter.setVoltage(-1.0);
+    //System.out.println(SubsystemConstants.m_shooter.get());
+    //SubsystemConstants.m_shooter.setVoltage(-1.0);
   }
 
   @Override
