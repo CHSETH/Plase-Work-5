@@ -27,7 +27,7 @@ public class Shooter extends SubsystemBase {
     //sets the shooter to rest
     System.out.println("EliteBarbarians");
     System.out.println(SubsystemConstants.m_shooter.get());
-    //SubsystemConstants.m_shooter.set(0.0);
+    SubsystemConstants.m_shooter.set(0.0);
 
   }
 
