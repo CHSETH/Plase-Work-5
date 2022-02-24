@@ -8,30 +8,23 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Conveyor;
 
 public class ConveyorIn extends CommandBase {
- 
   private final Conveyor v_conveyor;
 
   public ConveyorIn(Conveyor conveyor) {
-    
     v_conveyor = conveyor;
-    
     addRequirements(v_conveyor);
   }
 
-  
   @Override
   public void initialize() {
     v_conveyor.stop();
   }
-
   
   @Override
   public void execute() {}
 
-  
   @Override
   public void end(boolean interrupted) {}
-
   
   @Override
   public boolean isFinished() {

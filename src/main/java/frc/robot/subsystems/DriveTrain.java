@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.motorcontrol.Victor;
 
 
 public class DriveTrain extends SubsystemBase {
-
   //Declares the 4 motors to be used by the DriveTrain
   private final Victor m_leftMotor_front;
   private final Victor m_rightMotor_front;
@@ -19,38 +18,29 @@ public class DriveTrain extends SubsystemBase {
   //Declares the type of Drive as Mechanum
   private final MecanumDrive mecDrive;
 
-  public DriveTrain(){
+  public DriveTrain() {
+    //Assiging the motors to CanId's 1,2,3,and 4 respectively
+    m_leftMotor_front = new Victor(8);
+    m_rightMotor_front = new Victor(2);
+    m_leftMotor_back = new Victor(3);
+    m_rightMotor_back = new Victor(1);
 
-  //Assiging the motors to CanId's 1,2,3,and 4 respectively
-  m_leftMotor_front = new Victor(8);
-  m_rightMotor_front = new Victor(2);
-  m_leftMotor_back = new Victor(3);
-  m_rightMotor_back = new Victor(1);
-  //Assigns the 4 motors to a Mechanum Drive
-  mecDrive = new MecanumDrive(m_leftMotor_front, m_rightMotor_front, m_leftMotor_back, m_rightMotor_back);
-
-
+    //Assigns the 4 motors to a Mechanum Drive
+    mecDrive = new MecanumDrive(m_leftMotor_front, m_rightMotor_front, m_leftMotor_back, m_rightMotor_back);
   }
 
-  public void drive(double xspeed, double yspeed, double rotation){
+  public void drive(double xspeed, double yspeed, double rotation) {
     //Lets the controllers joystick values dictate the throttle of the MechanumDrive
     mecDrive.driveCartesian(xspeed, yspeed, rotation);
   }
 
-  public void stop(){
+  public void stop() {
     //Sets the MechanumDrive to rest when there is no input from the Joysticks
     mecDrive.driveCartesian(0, 0, 0);
   }
 
-
   @Override
-  public void periodic() {
+  public void periodic() {} 
 
-  } 
-
-
-  public void joystickDrive() {
-
-  }
-  
+  public void joystickDrive() {}
 }

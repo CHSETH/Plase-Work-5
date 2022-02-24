@@ -8,7 +8,6 @@ import frc.robot.Constants.SubsystemConstants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Conveyor extends SubsystemBase {
-  
   //private Victor v_conveyor;
 
   public Conveyor() {
@@ -17,27 +16,20 @@ public class Conveyor extends SubsystemBase {
   }
 
   @Override
-  public void periodic() {
+  public void periodic() {}
 
-  }
-
-  public void lift(){
+  public void lift() {
     //runs the conveyor at half throttle
     SubsystemConstants.v_conveyor.set(0.50);
-
   }
 
-  public void lower(){
+  public void lower() {
     //runs the conveyor at half throttle in reverse
     SubsystemConstants.v_conveyor.set(-0.50);
-
   }
 
-
-  public void stop(){
+  public void stop() {
     //sets the conveyor to rest
     SubsystemConstants.v_conveyor.set(0.0);
-
   }
-  
 }
