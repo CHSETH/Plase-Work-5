@@ -19,7 +19,6 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Conveyor;
 
 public class RobotContainer {
-
   //The Subsystems
   public final DriveTrain s_drivetrain = new DriveTrain();
   public final Intake s_intake = new Intake();
@@ -30,19 +29,15 @@ public class RobotContainer {
   public final GenericHID gamepad = new GenericHID(0);
 
   public RobotContainer() {
-
     configureButtonBindings();
 
     //The DriveTrain
     s_drivetrain.setDefaultCommand(
       new DriveCommand(
         s_drivetrain, () -> c_joystick.getRawAxis(1)*-1, () -> c_joystick.getRawAxis(0)*-1, () -> c_joystick.getRawAxis(2)));
-
   }
 
-
   private void configureButtonBindings() {
-
     /*JoystickButton IntakeUpButton = new JoystickButton(c_joystick, 3);
     JoystickButton IntakeDownButton = new JoystickButton(c_joystick, 4);
     JoystickButton ShootButton = new JoystickButton(c_joystick,7);
@@ -66,18 +61,12 @@ public class RobotContainer {
     new JoystickButton(c_joystick, 4).whileHeld(new IntakeOut(s_intake));
     //runs the conveyor while button 1 is held on the joystick
     new JoystickButton(c_joystick, 1).whileHeld(new ConveyorIn(v_conveyor));
-
   }
 
   public Command getAutonomousCommand() {
-
     AutonCommand m_autoCommand = new AutonCommand(s_drivetrain);
-
     return m_autoCommand;
-
   }
-
-
 }
 
 

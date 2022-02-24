@@ -4,38 +4,24 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
 
 public class AutonCommand extends CommandBase {
-
   private final DriveTrain drivetrain;
 
   public AutonCommand(DriveTrain dt) {
-
     drivetrain = dt;
     addRequirements(drivetrain);
-
   }
 
   @Override
-  public void initialize() {
-
-
-  }
+  public void initialize() {}
 
   @Override
-  public void execute() {
-
-
-  }
+  public void execute() {}
 
   @Override
-  public void end(boolean interrupted) {
-
-
-  }
+  public void end(boolean interrupted) {}
 
   @Override
   public boolean isFinished() {
-
     return false;
-    
   }
 }
