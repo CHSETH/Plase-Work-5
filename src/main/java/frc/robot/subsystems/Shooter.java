@@ -12,23 +12,23 @@ public class Shooter extends SubsystemBase {
   
   public void shoot() {
     //sets the shooter to full throttle
-    System.out.println("Shoot set");
+    System.out.println("Shoot set -1.0");
     SubsystemConstants.m_shooter.set(-1.0);
     System.out.println(SubsystemConstants.m_shooter.get());
   }
 
   public void stop() {
     //sets the shooter to rest
-    System.out.println("EliteBarbarians");
-    System.out.println(SubsystemConstants.m_shooter.get());
+    System.out.println("Shoot set 0.0");
     SubsystemConstants.m_shooter.set(0.0);
+    System.out.println(SubsystemConstants.m_shooter.get());
   }
 
   @Override
   public void periodic() {}
 
   public void m_shooter() {
-    System.out.println("something");
+    System.out.println("m_shooter() or something");
     SubsystemConstants.m_shooter.set(-0.5);
   }
 }

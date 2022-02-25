@@ -54,7 +54,7 @@ public class RobotContainer {
     //sets the shooter to rest when button 8 is pressed on the joystick
     new JoystickButton(c_joystick, 8).whenPressed(new StopShoot(s_shooter));
     //run the shooter when button 7 is pressed on the joystick
-    new JoystickButton(c_joystick, 7).whenPressed(new Shoot(s_shooter));
+    new JoystickButton(c_joystick, 7).whileHeld(new Shoot(s_shooter));
     //run the intake while button 3 is held on the joystick
     new JoystickButton(c_joystick, 3).whileHeld(new IntakeIn(s_intake));
     //reverse the intake while button 4 is held on the joystick

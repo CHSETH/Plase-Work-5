@@ -17,7 +17,6 @@ public class Shoot extends CommandBase {
 
   @Override
   public void initialize() {
-    System.out.println("Shoot1");
     s_shooter.shoot();
   }
 
@@ -28,13 +27,12 @@ public class Shoot extends CommandBase {
 
   @Override
   public void end(boolean interrupted) {
-    System.out.println("Shoot2");
-    s_shooter.shoot();
+    System.out.println("Shoot end");
+    s_shooter.stop();
   }
 
   @Override
   public boolean isFinished() {
-    System.out.println("Shoot3");
     return false;
   }
 }
