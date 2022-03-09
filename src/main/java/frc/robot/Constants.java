@@ -4,8 +4,9 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.motorcontrol.Talon;
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonFX;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 //import edu.wpi.first.wpilibj.motorcontrol.Spark;
 
 /**
@@ -19,9 +20,8 @@ import edu.wpi.first.wpilibj.motorcontrol.Victor;
 public final class Constants {
     //Declares and Assings the Subsystems motors to CanID's
     public static final class SubsystemConstants {
-        public static final Victor v_conveyor = new Victor(6);
-        public static final Victor s_intake = new Victor(5);
-       // public static final Talon m_shooter = new Talon(7);
-        public static final Talon m_shooter = new Talon(9);
+        public static final WPI_VictorSPX v_conveyor = new WPI_VictorSPX(6);
+        public static final WPI_VictorSPX s_intake = new WPI_VictorSPX(5);
+        public static final WPI_TalonFX m_shooter = new WPI_TalonFX(9);
     }
 }
