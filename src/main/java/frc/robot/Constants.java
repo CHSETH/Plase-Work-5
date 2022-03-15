@@ -21,7 +21,7 @@ public final class Constants {
     //Declares and Assings the Subsystems motors to CanID's
     public static final class SubsystemConstants {
         public static final WPI_VictorSPX v_conveyor = new WPI_VictorSPX(6);
-        public static final WPI_VictorSPX s_intake = new WPI_VictorSPX(5);
-        public static final WPI_TalonFX m_shooter = new WPI_TalonFX(9);
+        public static final WPI_VictorSPX s_intake = new WPI_VictorSPX(9);
+        public static final WPI_TalonFX m_shooter = new WPI_TalonFX(7);
     }
 }

@@ -2,14 +2,16 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.SubsystemConstants;
+//import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
 
 public class Intake extends SubsystemBase {
   //private Victor s_intake;
 
   public Intake() {
     //Assigning the CanID 5 to the motorcontroller
-    //s_intake = new Victor(5);
   }
+
 
   @Override
   public void periodic() {}

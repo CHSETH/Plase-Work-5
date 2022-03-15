@@ -38,7 +38,7 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    /*JoystickButton IntakeUpButton = new JoystickButton(c_joystick, 3);
+    JoystickButton IntakeUpButton = new JoystickButton(c_joystick, 3);
     JoystickButton IntakeDownButton = new JoystickButton(c_joystick, 4);
     JoystickButton ShootButton = new JoystickButton(c_joystick,7);
     JoystickButton Conveyor = new JoystickButton(c_joystick, 1);
@@ -46,7 +46,7 @@ public class RobotContainer {
     IntakeUpButton.whileHeld(new IntakeIn(s_intake));
     IntakeDownButton.whileHeld(new IntakeOut(s_intake));
     ShootButton.whileHeld(new Shoot(s_shooter));
-    Conveyor.whileHeld(new ConveyorIn(v_conveyor));*/
+    Conveyor.whileHeld(new ConveyorIn(v_conveyor));
 
     /*You can use either the above method or the below method to declare and assign button
     values to commands*/

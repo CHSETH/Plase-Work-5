@@ -6,24 +6,24 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.motorcontrol.Victor;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
 public class DriveTrain extends SubsystemBase {
   //Declares the 4 motors to be used by the DriveTrain
-  private final Victor m_leftMotor_front;
-  private final Victor m_rightMotor_front;
-  private final Victor m_leftMotor_back;
-  private final Victor m_rightMotor_back;
+  private final WPI_VictorSPX m_leftMotor_front;
+  private final WPI_VictorSPX m_rightMotor_front;
+  private final WPI_VictorSPX m_leftMotor_back;
+  private final WPI_VictorSPX m_rightMotor_back;
   //Declares the type of Drive as Mechanum
   private final MecanumDrive mecDrive;
 
   public DriveTrain() {
     //Assiging the motors to CanId's 1,2,3,and 4 respectively
-    m_leftMotor_front = new Victor(8);
-    m_rightMotor_front = new Victor(2);
-    m_leftMotor_back = new Victor(3);
-    m_rightMotor_back = new Victor(1);
+    m_leftMotor_front = new WPI_VictorSPX(3);
+    m_rightMotor_front = new WPI_VictorSPX(1);
+    m_leftMotor_back = new WPI_VictorSPX(4);
+    m_rightMotor_back = new WPI_VictorSPX(2);
 
     //Assigns the 4 motors to a Mechanum Drive
     mecDrive = new MecanumDrive(m_leftMotor_front, m_rightMotor_front, m_leftMotor_back, m_rightMotor_back);

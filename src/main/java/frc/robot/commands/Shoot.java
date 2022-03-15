@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants.SubsystemConstants;
 import frc.robot.subsystems.Shooter;
 
 public class Shoot extends CommandBase {
@@ -23,6 +24,7 @@ public class Shoot extends CommandBase {
   @Override
   public void execute() {
     s_shooter.shoot();
+    System.out.println(SubsystemConstants.m_shooter.get());
   }
 
   @Override
