@@ -14,7 +14,7 @@ public class Shooter extends SubsystemBase {
   
   public void shoot() {
     //sets the shooter to full throttle
-    System.out.println("Shoot set -1.0");
+    System.out.println("Shoot set");
     SlewRateLimiter rampUp = new SlewRateLimiter(-0.05);
     SubsystemConstants.m_shooter.set(-0.5);
     System.out.println(SubsystemConstants.m_shooter.get());

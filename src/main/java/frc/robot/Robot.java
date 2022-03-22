@@ -29,6 +29,8 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    SubsystemConstants.m_rightMotor_back.setInverted(true);
+    SubsystemConstants.m_rightMotor_front.setInverted(true);
   }
 
   /**
@@ -61,7 +63,7 @@ public class Robot extends TimedRobot {
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
-      m_autonomousCommand.schedule();
+      m_autonomousCommand.schedule(false);
     }
   }
 
@@ -83,7 +85,6 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    System.out.println(SubsystemConstants.m_shooter.get());
     //SubsystemConstants.m_shooter.setVoltage(-1.0);
   }
 

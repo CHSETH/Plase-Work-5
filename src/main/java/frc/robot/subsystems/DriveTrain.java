@@ -6,27 +6,21 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+//import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+import frc.robot.Constants.SubsystemConstants;
 
-
+//Public class for the DriveTrain
 public class DriveTrain extends SubsystemBase {
-  //Declares the 4 motors to be used by the DriveTrain
-  private final WPI_VictorSPX m_leftMotor_front;
-  private final WPI_VictorSPX m_rightMotor_front;
-  private final WPI_VictorSPX m_leftMotor_back;
-  private final WPI_VictorSPX m_rightMotor_back;
+ 
+ 
   //Declares the type of Drive as Mechanum
   private final MecanumDrive mecDrive;
 
   public DriveTrain() {
     //Assiging the motors to CanId's 1,2,3,and 4 respectively
-    m_leftMotor_front = new WPI_VictorSPX(3);
-    m_rightMotor_front = new WPI_VictorSPX(1);
-    m_leftMotor_back = new WPI_VictorSPX(4);
-    m_rightMotor_back = new WPI_VictorSPX(2);
-
+    
     //Assigns the 4 motors to a Mechanum Drive
-    mecDrive = new MecanumDrive(m_leftMotor_front, m_rightMotor_front, m_leftMotor_back, m_rightMotor_back);
+    mecDrive = new MecanumDrive(SubsystemConstants.m_leftMotor_front, SubsystemConstants.m_leftMotor_back, SubsystemConstants.m_rightMotor_front, SubsystemConstants.m_rightMotor_back);
   }
 
   public void drive(double xspeed, double yspeed, double rotation) {
@@ -35,7 +29,7 @@ public class DriveTrain extends SubsystemBase {
   }
 
   public void stop() {
-    //Sets the MechanumDrive to rest when there is no input from the Joysticks
+    //Sets the MecanumDrive to rest when there is no input from the Joysticks
     mecDrive.driveCartesian(0, 0, 0);
   }
 
