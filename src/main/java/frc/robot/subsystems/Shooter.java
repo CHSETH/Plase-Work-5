@@ -6,24 +6,24 @@ package frc.robot.subsystems;
 
 import frc.robot.Constants.SubsystemConstants;
 import edu.wpi.first.math.filter.SlewRateLimiter;
+import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 
 public class Shooter extends SubsystemBase {
+  MotorControllerGroup shooter = new MotorControllerGroup(SubsystemConstants.m_shooter, SubsystemConstants.m_shooter2);
   public Shooter() {}
   
   public void shoot() {
     //sets the shooter to full throttle
-    System.out.println("Shoot set");
-    SlewRateLimiter rampUp = new SlewRateLimiter(-0.05);
-    SubsystemConstants.m_shooter.set(-0.5);
+    //SlewRateLimiter rampUp = new SlewRateLimiter(-0.05);
+    shooter.set(0.90);
     System.out.println(SubsystemConstants.m_shooter.get());
   }
 
   public void stop() {
     //sets the shooter to rest
-    System.out.println("Shoot set 0.0");
-    SubsystemConstants.m_shooter.set(0.0);
+    shooter.set(0.0);
     System.out.println(SubsystemConstants.m_shooter.get());
     
   }
@@ -31,8 +31,7 @@ public class Shooter extends SubsystemBase {
   @Override
   public void periodic() {}
 
-  public void m_shooter() {
-    System.out.println("m_shooter() or something");
-    SubsystemConstants.m_shooter.set(-0.5);
+  public void slowShoot() {
+    shooter.set(-0.5);
   }
 }

@@ -4,10 +4,18 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.Constants.SubsystemConstants;
+import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Intake;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -20,6 +28,8 @@ public class Robot extends TimedRobot {
 
   private RobotContainer m_robotContainer;
 
+  double autoStart = 0;
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -29,8 +39,10 @@ public class Robot extends TimedRobot {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
+    CameraServer.startAutomaticCapture();
     SubsystemConstants.m_rightMotor_back.setInverted(true);
     SubsystemConstants.m_rightMotor_front.setInverted(true);
+
   }
 
   /**
@@ -47,6 +59,7 @@ public class Robot extends TimedRobot {
     // and running subsystem periodic() methods.  This must be called from the robot's periodic
     // block in order for anything in the Command-based framework to work.
     CommandScheduler.getInstance().run();
+
   }
 
   /** This function is called once each time the robot enters Disabled mode. */
@@ -59,24 +72,60 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
-
+    //m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    SubsystemConstants.m_rightMotor_back.setInverted(true);
+    SubsystemConstants.m_rightMotor_front.setInverted(true);
+    autoStart = Timer.getFPGATimestamp();
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule(false);
     }
   }
 
-  /** This function is called periodically during autonomous. */
+  //This function is called periodically during autonomous. 
   @Override
-  public void autonomousPeriodic() {}
+  public void autonomousPeriodic() {
+    double autoTimeElapsed = Timer.getFPGATimestamp()- autoStart;
+    System.out.println(autoTimeElapsed);
+    if(autoTimeElapsed < 4.0){
+      SubsystemConstants.m_shooter.set(0.85);
+    }
+    if(autoTimeElapsed> 3.01 && autoTimeElapsed<4.0){
+      SubsystemConstants.s_intake.set(.5);
+    }
+    if(autoTimeElapsed> 4.0){
+      SubsystemConstants.m_shooter.set(0.0);
+      SubsystemConstants.s_intake.set(0.0);
+    
+    }
+    if(autoTimeElapsed> 12.0){
+      SubsystemConstants.m_leftMotor_back.set(-0.8);
+      //SubsystemConstants.m_leftMotor_back.setVoltage(-12.0);
+      SubsystemConstants.m_leftMotor_front.set(-0.8);
+      //SubsystemConstants.m_leftMotor_front.setVoltage(-12.0);
+      SubsystemConstants.m_rightMotor_back.set(-0.8);
+      //SubsystemConstants.m_rightMotor_back.setVoltage(12.0);
+      SubsystemConstants.m_rightMotor_front.set(-0.8);
+      //SubsystemConstants.m_rightMotor_front.setVoltage(12.0);
+      
+    }
+    /*if(autoTimeElapsed> 0.0){
+      System.out.println("Mega Knight");
+      SubsystemConstants.m_leftMotor_front.set(0.0);
+      SubsystemConstants.m_leftMotor_back.set(0.0);
+      SubsystemConstants.m_rightMotor_back.set(0.0);
+      SubsystemConstants.m_rightMotor_front.set(0.0);
+      SubsystemConstants.v_conveyor.set(0.0);
+    }*/
+  }
+  
 
   @Override
   public void teleopInit() {
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
-    // this line or comment it out.
+    // this line or comment it out.poo
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }

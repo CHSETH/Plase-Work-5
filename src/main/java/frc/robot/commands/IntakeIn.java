@@ -3,28 +3,28 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Intake;
 
 public class IntakeIn extends CommandBase {
-  private final Intake s_Shlorper;
+  private final Intake s_intake;
 
-  public IntakeIn(Intake Shlorper) {
+  public IntakeIn(Intake Intake) {
 
-    s_Shlorper = Shlorper;
+    s_intake = Intake;
     
-    addRequirements(s_Shlorper);
+    addRequirements(s_intake);
 
   }
 
   @Override
   public void initialize() {
-    s_Shlorper.stop();
+    s_intake.stop();
   }
 
   @Override
   public void execute() {
-    s_Shlorper.lift();
+    s_intake.lift();
   }
 
   @Override
   public void end(boolean interrupted) {
-    s_Shlorper.stop();
+    s_intake.stop();
   }
 }

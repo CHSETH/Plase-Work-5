@@ -20,7 +20,9 @@ public class DriveCommand extends CommandBase{
   }
 
   @Override
-  public void initialize() {}
+  public void initialize() {
+    drivetrain.stop();
+  }
 
   @Override
   public void execute() {
