@@ -4,20 +4,22 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.PneumaticsModuleType;
+import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.SubsystemConstants;
 
 public class Numatiks extends SubsystemBase {
+  DoubleSolenoid sole = new DoubleSolenoid(PneumaticsModuleType.CTREPCM,0,1);
   @Override
   public void periodic() {}
 
   public void out() {
-    SubsystemConstants.u_num1.set(1.0);
-    SubsystemConstants.u_num2.set(0.0);
+    sole.set(Value.kForward);
   }
 
   public void in() {
-    SubsystemConstants.u_num1.set(0.0);
-    SubsystemConstants.u_num2.set(1.0);
+    sole.set(Value.kReverse);
   }
 }

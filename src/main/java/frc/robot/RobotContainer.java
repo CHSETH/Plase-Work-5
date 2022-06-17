@@ -19,7 +19,11 @@ import frc.robot.commands.ConveyorOut;
 import frc.robot.commands.StopShoot;
 //import frc.robot.commands.StopShoot;
 import frc.robot.commands.IntakeOut;
+import frc.robot.commands.PullOut;
+import frc.robot.commands.PutIn;
 import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Numatiks;
+import frc.robot.subsystems.Piston;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Conveyor;
@@ -31,6 +35,7 @@ public class RobotContainer {
   public final Intake s_intake = new Intake();
   public final Shooter m_shooter = new Shooter();
   public final Conveyor v_conveyor = new Conveyor();
+  public final Numatiks m_sole = new Numatiks();
   //The Joystick
   public final Joystick c_joystick = new Joystick(0);
   public final Joystick c_joystick3 = new Joystick(2);
@@ -38,7 +43,7 @@ public class RobotContainer {
   //The Air Compressor
   Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
   //The Pneumatic Solenoid
-  DoubleSolenoid sole = new DoubleSolenoid(PneumaticsModuleType.CTREPCM,0,1);
+  
   //public final GenericHID gamepad = new GenericHID(1);
 
   public RobotContainer() {
@@ -66,13 +71,15 @@ public class RobotContainer {
     //runs the conveyor while button 1 is held on the joystick
     new JoystickButton(c_joystick3, 5).whileHeld(new ConveyorIn(v_conveyor));
     new JoystickButton(c_joystick3, 6).whileHeld(new ConveyorOut(v_conveyor));
+    new JoystickButton(c_joystick3, 9).whenPressed(new PutIn(m_sole));
+    new JoystickButton(c_joystick3, 10).whenPressed(new PullOut(m_sole));
     //new JoystickButton(c_joystick3, 2).whileHeld(new StopShoot(m_shooter));
     //Toggles the Solenoid for the Intake Deployment
-    if(c_joystick3.getRawButtonPressed(9) == true){
+    /*if(c_joystick3.getRawButtonPressed(9)){
       sole.set(DoubleSolenoid.Value.kForward);
-    } else if(c_joystick3.getRawButtonReleased(9) == true){
+    } else if(c_joystick3.getRawButtonReleased(9)){
       sole.set(DoubleSolenoid.Value.kReverse);
-    }
+    }*/
   }
 
  // public Command getAutonomousCommand() {

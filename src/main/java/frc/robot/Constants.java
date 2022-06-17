@@ -24,8 +24,8 @@ public final class Constants {
         public static final WPI_VictorSPX v_conveyor = new WPI_VictorSPX(7);
         public static final WPI_VictorSPX s_intake = new WPI_VictorSPX(8);
 
-        public static final WPI_VictorSPX u_num1 = new WPI_VictorSPX(5);
-        public static final WPI_VictorSPX u_num2 = new WPI_VictorSPX(10);
+        //public static final WPI_VictorSPX u_num1 = new WPI_VictorSPX(5);
+        //public static final WPI_VictorSPX u_num2 = new WPI_VictorSPX(10);
         
         public static final WPI_VictorSPX m_shooter = new WPI_VictorSPX(9);
         public static final WPI_VictorSPX m_shooter2 = new WPI_VictorSPX(6);
