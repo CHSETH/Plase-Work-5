@@ -5,7 +5,6 @@
 package frc.robot.subsystems;
 
 import frc.robot.Constants.SubsystemConstants;
-import edu.wpi.first.math.filter.SlewRateLimiter;
 import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -16,9 +15,12 @@ public class Shooter extends SubsystemBase {
   
   public void shoot() {
     //sets the shooter to full throttle
-    //SlewRateLimiter rampUp = new SlewRateLimiter(-0.05);
     shooter.set(0.90);
     System.out.println(SubsystemConstants.m_shooter.get());
+  }
+
+  public void reverse(){
+    shooter.set(-0.9);
   }
 
   public void stop() {

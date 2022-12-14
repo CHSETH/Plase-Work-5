@@ -4,17 +4,12 @@
 
 package frc.robot;
 
-import com.ctre.phoenix.motorcontrol.VictorSPXControlMode;
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
-
 import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.Constants.SubsystemConstants;
-import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Intake;
 
 
 /**
@@ -98,15 +93,15 @@ public class Robot extends TimedRobot {
       SubsystemConstants.s_intake.set(0.0);
     
     }
-    if(autoTimeElapsed> 12.0){
-      SubsystemConstants.m_leftMotor_back.set(-0.8);
-      //SubsystemConstants.m_leftMotor_back.setVoltage(-12.0);
-      SubsystemConstants.m_leftMotor_front.set(-0.8);
-      //SubsystemConstants.m_leftMotor_front.setVoltage(-12.0);
-      SubsystemConstants.m_rightMotor_back.set(-0.8);
-      //SubsystemConstants.m_rightMotor_back.setVoltage(12.0);
-      SubsystemConstants.m_rightMotor_front.set(-0.8);
-      //SubsystemConstants.m_rightMotor_front.setVoltage(12.0);
+    if(autoTimeElapsed> 7.0){
+      //SubsystemConstants.m_leftMotor_back.set(-1.0);
+      SubsystemConstants.m_leftMotor_back.setVoltage(-12.0);
+      //SubsystemConstants.m_leftMotor_front.set(-1.0);
+      SubsystemConstants.m_leftMotor_front.setVoltage(-12.0);
+      //SubsystemConstants.m_rightMotor_back.set(-1.0);
+      SubsystemConstants.m_rightMotor_back.setVoltage(-12.0);
+      //SubsystemConstants.m_rightMotor_front.set(-1.0);
+      SubsystemConstants.m_rightMotor_front.setVoltage(-12.0);
       
     }
     /*if(autoTimeElapsed> 0.0){

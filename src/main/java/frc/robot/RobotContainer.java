@@ -1,14 +1,10 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj2.command.Command;
 //import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
-import edu.wpi.first.wpilibj.DoubleSolenoid.Value;
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.GenericHID;
 
 import frc.robot.commands.DriveCommand;
 //import frc.robot.commands.Thanks2611;
@@ -16,14 +12,11 @@ import frc.robot.commands.ConveyorIn;
 import frc.robot.commands.IntakeIn;
 import frc.robot.commands.Shoot;
 import frc.robot.commands.ConveyorOut;
-import frc.robot.commands.StopShoot;
-//import frc.robot.commands.StopShoot;
 import frc.robot.commands.IntakeOut;
-import frc.robot.commands.PullOut;
-import frc.robot.commands.PutIn;
+import frc.robot.commands.Retract;
+import frc.robot.commands.Extension;
 import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Numatiks;
-import frc.robot.subsystems.Piston;
+import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Conveyor;
@@ -35,7 +28,7 @@ public class RobotContainer {
   public final Intake s_intake = new Intake();
   public final Shooter m_shooter = new Shooter();
   public final Conveyor v_conveyor = new Conveyor();
-  public final Numatiks m_sole = new Numatiks();
+  public final Climber m_climb = new Climber();
   //The Joystick
   public final Joystick c_joystick = new Joystick(0);
   public final Joystick c_joystick3 = new Joystick(2);
@@ -59,37 +52,14 @@ public class RobotContainer {
     /*You can use either the above method or the below method to declare and assign button
     values to commands*/
 
-    //sets the shooter to rest when button 8 is pressed on the joystick
-    //new JoystickButton(c_joystick, 8).toggleWhenPressed(new StopShoot(s_shooter));
     new JoystickButton(c_joystick3, 1).whileHeld(new Shoot(m_shooter));
-    //run the shooter when button 7 is pressed on the joystick
-    //new JoystickButton(c_joystick, 7).whileHeld(new Shoot(m_shooter));
-    //run the intake while button 3 is held on the joystick
     new JoystickButton(c_joystick3, 3).whileHeld(new IntakeIn(s_intake));
-    //reverse the intake while button 4 is held on the joystick
     new JoystickButton(c_joystick3, 4).whileHeld(new IntakeOut(s_intake));
-    //runs the conveyor while button 1 is held on the joystick
     new JoystickButton(c_joystick3, 5).whileHeld(new ConveyorIn(v_conveyor));
     new JoystickButton(c_joystick3, 6).whileHeld(new ConveyorOut(v_conveyor));
-    new JoystickButton(c_joystick3, 9).whenPressed(new PutIn(m_sole));
-    new JoystickButton(c_joystick3, 10).whenPressed(new PullOut(m_sole));
-    //new JoystickButton(c_joystick3, 2).whileHeld(new StopShoot(m_shooter));
-    //Toggles the Solenoid for the Intake Deployment
-    /*if(c_joystick3.getRawButtonPressed(9)){
-      sole.set(DoubleSolenoid.Value.kForward);
-    } else if(c_joystick3.getRawButtonReleased(9)){
-      sole.set(DoubleSolenoid.Value.kReverse);
-    }*/
+    new JoystickButton(c_joystick3, 9).whileHeld(new Extension(m_climb));
+    new JoystickButton(c_joystick3, 10).whileHeld(new Retract(m_climb));
   }
-
- // public Command getAutonomousCommand() {
-    //Thanks2611 s_autoCommand = new Thanks2611();
-    //return s_autoCommand;
-  //}
-
-  //public Command getAutonomusCommand(){
-    //Thanks2611 M_AutonCommand = new Thanks2611();
-    //return M_AutonCommand; 
   }
 
   

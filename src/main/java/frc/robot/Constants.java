@@ -8,7 +8,6 @@ package frc.robot;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 //import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 
-import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 
 /**
  * The Constants class provides a convenient place for teams to hold robot-wide numerical or boolean
@@ -23,13 +22,12 @@ public final class Constants {
     public static final class SubsystemConstants {
         public static final WPI_VictorSPX v_conveyor = new WPI_VictorSPX(7);
         public static final WPI_VictorSPX s_intake = new WPI_VictorSPX(8);
-
-        //public static final WPI_VictorSPX u_num1 = new WPI_VictorSPX(5);
-        //public static final WPI_VictorSPX u_num2 = new WPI_VictorSPX(10);
         
-        public static final WPI_VictorSPX m_shooter = new WPI_VictorSPX(9);
+        public static final WPI_VictorSPX m_shooter = new WPI_VictorSPX(6);
         public static final WPI_VictorSPX m_shooter2 = new WPI_VictorSPX(6);
         
+        public static final WPI_VictorSPX m_climber = new WPI_VictorSPX(5);
+        public static final WPI_VictorSPX m_climber2 = new WPI_VictorSPX(5);
 
         public static final WPI_VictorSPX m_leftMotor_front = new WPI_VictorSPX(2);
         public static final WPI_VictorSPX m_rightMotor_front = new WPI_VictorSPX(3);

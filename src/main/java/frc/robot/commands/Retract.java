@@ -5,31 +5,33 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystems.Numatiks;
+import frc.robot.subsystems.Climber;
 
-public class PullOut extends CommandBase {
-  final Numatiks u_num;
+public class Retract extends CommandBase {
+  public final Climber s_climber;
+  /** Creates a new Retract. */
+  public Retract(Climber C) {
+    s_climber = C;
     // Use addRequirements() here to declare subsystem dependencies.
-
-  public PullOut(Numatiks nu)
-  {
-    u_num = nu;
-    addRequirements(u_num);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {}
+  public void initialize() {
+    s_climber.retract();
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    u_num.out();
+    s_climber.retract();
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    s_climber.stop();
+  }
 
   // Returns true when the command should end.
   @Override
