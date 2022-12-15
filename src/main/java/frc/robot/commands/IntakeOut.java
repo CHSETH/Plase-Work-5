@@ -27,4 +27,3 @@ public class IntakeOut extends CommandBase {
     s_intake.stop();
   }  
 }
-

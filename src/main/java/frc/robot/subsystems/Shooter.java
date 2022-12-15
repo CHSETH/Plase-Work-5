@@ -14,7 +14,7 @@ public class Shooter extends SubsystemBase {
   public Shooter() {}
   
   public void shoot() {
-    //sets the shooter to full throttle
+    // sets the shooter to full throttle
     shooter.set(0.90);
     System.out.println(SubsystemConstants.m_shooter.get());
   }
@@ -24,10 +24,9 @@ public class Shooter extends SubsystemBase {
   }
 
   public void stop() {
-    //sets the shooter to rest
+    // sets the shooter to rest
     shooter.set(0.0);
     System.out.println(SubsystemConstants.m_shooter.get());
-    
   }
 
   @Override

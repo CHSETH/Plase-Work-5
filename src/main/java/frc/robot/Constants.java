@@ -33,6 +33,5 @@ public final class Constants {
         public static final WPI_VictorSPX m_rightMotor_front = new WPI_VictorSPX(3);
         public static final WPI_VictorSPX m_leftMotor_back = new WPI_VictorSPX(4);
         public static final WPI_VictorSPX m_rightMotor_back = new WPI_VictorSPX(1);
-       
     }
 }

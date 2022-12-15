@@ -6,11 +6,8 @@ public class IntakeIn extends CommandBase {
   private final Intake s_intake;
 
   public IntakeIn(Intake Intake) {
-
     s_intake = Intake;
-    
     addRequirements(s_intake);
-
   }
 
   @Override

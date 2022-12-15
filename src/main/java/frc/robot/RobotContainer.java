@@ -23,34 +23,34 @@ import frc.robot.subsystems.Conveyor;
 
 
 public class RobotContainer {
-  //The Subsystems
+  // The Subsystems
   public final DriveTrain s_drivetrain = new DriveTrain();
   public final Intake s_intake = new Intake();
   public final Shooter m_shooter = new Shooter();
   public final Conveyor v_conveyor = new Conveyor();
   public final Climber m_climb = new Climber();
-  //The Joystick
+  // The Joystick
   public final Joystick c_joystick = new Joystick(0);
   public final Joystick c_joystick3 = new Joystick(2);
   public final Joystick c_joystick2 = new Joystick(1);
-  //The Air Compressor
+  // The Air Compressor
   Compressor pcmCompressor = new Compressor(0, PneumaticsModuleType.CTREPCM);
-  //The Pneumatic Solenoid
+  // The Pneumatic Solenoid
   
-  //public final GenericHID gamepad = new GenericHID(1);
+  // public final GenericHID gamepad = new GenericHID(1);
 
   public RobotContainer() {
     configureButtonBindings();
 
-    //The DriveTrain
+    // The DriveTrain
     s_drivetrain.setDefaultCommand(
       new DriveCommand(
         s_drivetrain, () -> -c_joystick.getRawAxis(1), () -> c_joystick.getRawAxis(0), () -> c_joystick2.getRawAxis(2)));
   }
 
   private void configureButtonBindings() {
-    /*You can use either the above method or the below method to declare and assign button
-    values to commands*/
+    /* You can use either the above method or the below method to declare and assign button
+    values to commands */
 
     new JoystickButton(c_joystick3, 1).whileHeld(new Shoot(m_shooter));
     new JoystickButton(c_joystick3, 3).whileHeld(new IntakeIn(s_intake));
@@ -60,12 +60,4 @@ public class RobotContainer {
     new JoystickButton(c_joystick3, 9).whileHeld(new Extension(m_climb));
     new JoystickButton(c_joystick3, 10).whileHeld(new Retract(m_climb));
   }
-  }
-
-  
-
-
-
-
-
-
+}

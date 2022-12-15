@@ -38,4 +38,3 @@ public class Shoot extends CommandBase {
     return false;
   }
 }
-

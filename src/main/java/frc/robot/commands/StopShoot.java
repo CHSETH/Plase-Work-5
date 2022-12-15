@@ -38,4 +38,3 @@ public class StopShoot extends CommandBase {
     return false;
   }
 }
-

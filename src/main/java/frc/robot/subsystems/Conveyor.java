@@ -9,11 +9,10 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Conveyor extends SubsystemBase {
 
-  //public Conveyor() {
-    //Assigning the CanID 6 to the motorcontroller
-    //v_conveyor = new WPI_VictorSPX(7);
+  // public Conveyor() {
+    // Assigning the CanID 6 to the motorcontroller
+    // v_conveyor = new WPI_VictorSPX(7);
   
-
   @Override
   public void periodic() {}
 
